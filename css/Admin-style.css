@@ -1,0 +1,42 @@
+body{
+    background-color: #FBE697;
+}
+h1{
+    font-family: "Calibri Light";
+    text-align: center;
+
+    font-weight: bolder;
+    color: black;
+}
+
+.tableAlign{
+    margin-left: 40%;
+    margin-top: 1%;
+    font-family: "Calibri Light";
+}
+
+.bg{
+    background-color: limegreen;
+    width: 25%;
+    padding: 10px;
+    margin-top: 2%;
+    margin-left: 40%;
+}
+
+.box{
+    background-color: yellowgreen;
+    height: 10%;
+    padding: 2%;
+
+}
+
+.pic{
+    width: 8%;
+    margin-left: 45%;
+}
+input, select{
+    padding: 5%;
+    width: 100%;
+    font-weight: bolder;
+}
+

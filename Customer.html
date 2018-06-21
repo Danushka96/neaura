@@ -1,0 +1,85 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="Customer-style.css">
+	<link rel="stylesheet" type="text/css" href="head.css">
+</head>
+<body>
+<div id="divhead1">
+	<h1 id="h11">Ne'Aura</h1>
+	<img style="float:left; margin-left:5px; margin-top:8px;" src="Images/leaf-mould.png" width="50px" height="50px"/>
+	<img class="snlogo" src="Images/facebook-logo_318-49940.jpg" width="20px" height="20px" alt="Facebookconnect"/>
+	<img class="snlogo" src="Images/69366.png" width="20px" height="20px" alt="Instagramconnect"/>
+	<img class="snlogo" src="Images/images%20(1).png" width="20px" height="20px" alt="Twitterconnect"/>
+	<h6 id="h61">Beauty Product Outlets and Salons</h6>
+</div>
+
+<ul class="main-navigation">
+
+	<li><a href="#">Home</a></li>
+	<li><a href="#">Products</a>
+		<ul>
+			<li><a href="#">Skin Care</a></li>
+			<li><a href="#">Hair Care</a></li>
+			<li><a href="#">Body Care</a></li>
+			<li><a href="#">Outlets</a></li>
+		</ul></li>
+	<li><a href="#">Salons</a>
+		<ul>
+			<li><a href="#">Services</a></li>
+			<li><a href="#">Branches</a></li>
+		</ul>
+	</li>
+	<li><a href="#">Login</a>
+		<ul>
+			<li><a href="#">Admin Login</a>
+
+			</li>
+			<li><a href="#">My Login</a></li>
+		</ul>
+	</li>
+	<li><a href="#">About Us</a></li>
+	<li><a href="#">Contact Us</a></li>
+
+</ul>
+
+<div>
+	<h1>Customer Login</h1>
+	<img class="pic" src="Images/customer.png">
+</div>
+
+<div class="box1">
+	<table class="tableAlign">
+		<tr>
+			<td>
+				<div class="bg">
+					<form method="post" action="checkEmail.php ">
+						<h3>Create an Account</h3>
+						Please Enter Your Email Address<br><br>
+						<input type="email" name="checkemail" id="email" placeholder="Email Address"><br><br>
+						<input type="submit" value="Create an Account">
+					</form>
+				</div>
+			</td>
+			<td> </td>
+			<td>
+				<div class="columnAlign">
+					<form method="post" action="CustomerLogin.php">
+						<h3>Already Registered</h3>
+						<table>
+							<tr>
+								<td>Username</td> <td>  <input type="text" name="email"  placeholder="Username"></td></tr>
+							<tr><td>Password</td>  <td>  <input type="password" name="password" placeholder="Password"></td></tr>
+							<tr> <td><input type="submit" value="Login"></td> </tr>
+						</table>
+					</form>
+				</div>
+			</td>
+		</tr>
+	</table>
+</div>
+
+</body>
+
+
+
+</html>
