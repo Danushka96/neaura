@@ -1,0 +1,98 @@
+@charset "utf-8";
+/* CSS Document */
+.pics{
+	float:left;
+	box-shadow:5px 5px 5px #930;
+	box-sizing:border-box;
+	margin:10px;
+	
+}
+#pic1 {
+	float:left;
+	box-shadow:5px 5px 5px #930;
+	box-sizing:border-box;
+	clear:both;
+	margin:10px;
+	
+	
+
+	
+}
+#pic2{
+	float:left;
+	box-shadow:5px 5px 5px #930;
+	box-sizing:border-box;
+	clear:both;
+	margin:10px;
+	
+	
+}
+#productservice{
+	font-family:myfont2;
+	font-size:18px;
+	box-shadow:5px 5px 5px #003300;
+	height:500px;
+	width:100%;
+	margin-bottom:50px;
+}
+#productservice2{
+	font-family:myfont2;
+	font-size:18px;
+	box-shadow:5px 5px 5px #003300;
+	height:500px;
+	width:100%;
+	float:left;
+	clear:both;
+	margin-bottom:50px;
+	z-index:8;
+	
+}
+#commnt1
+{background-image:url(../images/nature-model-girls-beauty-girl-hd-987882.jpg);
+background-position:center;
+background-size:auto;
+width:100%;
+height:300px;
+background-size:cover;
+opacity:5;
+clear:both;
+float:left;
+color:#000;
+}
+#commnt1 p{font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
+font-size:16px;
+float:left;
+clear:both;
+margin:50px;
+z-index:20;
+font-weight:bolder;}
+#commnt2
+{background-image:url(../images/nature-model-girls-beauty-girl-hd-987882.jpg);
+background-position:center;
+background-size:auto;
+width:100%;
+height:300px;
+background-size:cover;
+opacity:5;
+clear:both;
+float:left;
+color:#000;
+}
+#commnt2 p{font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
+font-size:16px;
+float:left;
+clear:both;
+margin:50px;
+z-index:20;
+font-weight:bolder;}
+
+
+
+	 .sub{
+		 position:relative;
+		 top:10px;
+	 font-family:myfont2;
+	 font-size:24px;
+	 color:#000;}
+	 
+	

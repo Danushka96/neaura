@@ -1,11 +1,11 @@
 @charset "utf-8";
 /* From the introductory banner to multi dimensional drop down list */
 @font-face{
-	src:url(copy/fonts/fonts/Berkshire_Swash/BerkshireSwash-Regular.ttf);
+	src:url(../fonts/fonts/Berkshire_Swash/BerkshireSwash-Regular.ttf);
 	font-family:"myfont";
 	}
 	@font-face{
-	src:url(copy/fonts/BioRhyme_Expanded/BioRhymeExpanded-Bold.ttf);
+	src:url(../fonts/BioRhyme_Expanded/BioRhymeExpanded-Bold.ttf);
 	font-family:"myfont2";
 	}
 #divhead1{background-color:#FBE697;
