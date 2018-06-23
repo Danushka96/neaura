@@ -1,0 +1,33 @@
+@charset "utf-8";
+/* CSS Document */
+@font-face{
+	src:url(fonts/fonts/Berkshire_Swash/BerkshireSwash-Regular.ttf);
+	font-family:"myfont";
+	
+	
+	}
+
+*{font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
+font-size:16px;
+font-weight:800;
+}
+#ap{
+	width:900px;
+	padding:80px;
+	height:900px;
+	margin:80px;
+	box-shadow:5px 5px 5px #333333;
+	text-align:center;
+	}
+	form{
+		position:relative;
+		top:200px;}
+	
+	h1{ position:relative;
+	top:100px;
+		font-family:myfont;
+		font-size:36px;
+		text-shadow:1px 1px 1px #666666;
+	}
+		
+	

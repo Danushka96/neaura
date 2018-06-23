@@ -1,5 +1,33 @@
 <?php
 
+session_start();
+
+if(isset($_SESSION['email'])){
+    header("location: ./index.php");
+}
+if(isset($_POST['submit'])){
+    require_once('inc/config.php');
+
+    $email=$_POST['email'];
+    $password=$_POST['password'];
+    $query="SELECT * FROM users WHERE email=$email AND password=$password LIMIT 1";
+
+    $selectq=mysqli_query($connection,$query);
+    if(mysqli_num_rows($selectq)>0){
+        $result=mysqli_fetch_assoc($selectq);
+        $_SESSION['email']=$result['email'];
+        $_SESSION['type']=$result['type'];
+
+        $cusqu="SELECT * FROM customers WHERE email=$email LIMIT 1";
+        $cusqur=mysqli_query($connection, $cusqu);
+        if(mysqli_num_rows($cusqur)>0){
+        	$cusresult=mysqli_fetch_assoc($cusqur);
+        	$_SESSION['name']=$cusresult['firstname'];
+        }
+        header("location: ./index.php");
+    }
+}
+
 require_once('layout/header.php');
 
 ?>
@@ -12,27 +40,18 @@ require_once('layout/header.php');
 <div class="box1">
 	<table class="tableAlign">
 		<tr>
-			<td>
-				<div class="bg">
-					<form method="post" action="checkEmail.php ">
-						<h3>Create an Account</h3>
-						Please Enter Your Email Address<br><br>
-						<input type="email" name="checkemail" id="email" placeholder="Email Address"><br><br>
-						<input type="submit" value="Create an Account">
-					</form>
-				</div>
-			</td>
 			<td> </td>
 			<td>
 				<div class="columnAlign">
-					<form method="post" action="CustomerLogin.php">
-						<h3>Already Registered</h3>
+					<form method="post" action="customer.php">
+						<h3>Login</h3>
 						<table>
 							<tr>
-								<td>Username</td> <td>  <input type="text" name="email"  placeholder="Username"></td></tr>
+								<td>Email</td> <td>  <input type="email" name="email"  placeholder="Email"></td></tr>
 							<tr><td>Password</td>  <td>  <input type="password" name="password" placeholder="Password"></td></tr>
-							<tr> <td><input type="submit" value="Login"></td> </tr>
+							<tr> <td><input type="submit" value="Login" name="submit"></td> </tr>
 						</table>
+						<p>New User? <a href="cusreg.php">Register Here</a></p>
 					</form>
 				</div>
 			</td>
