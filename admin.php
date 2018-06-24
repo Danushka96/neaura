@@ -9,14 +9,16 @@ if(isset($_POST['submit'])){
 
     $username=$_POST['email'];
     $password=$_POST['password'];
-    $query="SELECT * FROM users WHERE email=$username AND password=$password LIMIT 1";
+    $query="SELECT * FROM users WHERE email='$username' AND password='$password' LIMIT 1";
 
     $selectq=mysqli_query($connection,$query);
     if(mysqli_num_rows($selectq)>0){
         $result=mysqli_fetch_assoc($selectq);
         $_SESSION['email']=$result['email'];
         $_SESSION['type']=$result['type'];
-        header("location: ./index.php");
+        $_SESSION['branch']=$result['branch'];
+
+        header("location: ./adminpanel.php");
     }
 }
 

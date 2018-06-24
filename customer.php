@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 
 if(isset($_SESSION['email'])){
@@ -10,21 +9,24 @@ if(isset($_POST['submit'])){
 
     $email=$_POST['email'];
     $password=$_POST['password'];
-    $query="SELECT * FROM users WHERE email=$email AND password=$password LIMIT 1";
-
+    $query="SELECT * FROM users WHERE email='$email' AND password='$password' LIMIT 1";
+    //echo $query;
     $selectq=mysqli_query($connection,$query);
     if(mysqli_num_rows($selectq)>0){
         $result=mysqli_fetch_assoc($selectq);
+        $_SESSION['customerid']=$result['id'];
         $_SESSION['email']=$result['email'];
         $_SESSION['type']=$result['type'];
 
-        $cusqu="SELECT * FROM customers WHERE email=$email LIMIT 1";
+        $cusqu="SELECT * FROM customers WHERE email='$email' LIMIT 1";
         $cusqur=mysqli_query($connection, $cusqu);
         if(mysqli_num_rows($cusqur)>0){
         	$cusresult=mysqli_fetch_assoc($cusqur);
         	$_SESSION['name']=$cusresult['firstname'];
         }
         header("location: ./index.php");
+    }else{
+    	echo "<script>alert('Username or Password is invalied!');</script>";
     }
 }
 

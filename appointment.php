@@ -1,3 +1,14 @@
+<?php
+session_start();
+
+if(!isset($_SESSION['name'])){
+	header("location: ./customer.php");
+}
+
+$customer=$_SESSION['customerid'];
+
+?>
+
 <!doctype html>
 <html>
 <head>
@@ -8,6 +19,7 @@
 
 <body>
 <div id="ap">
+<h1>Hi, <?php echo $_SESSION['name']; ?></h1>
 <h1>Quick Appointment</h1>
 <form>
 <label for="tel">Enter Phone Number</label>

@@ -1,10 +1,20 @@
 <?php
 
+session_start();
+
 require_once('layout/header.php');
 
-if(isset($_SESSION['email'])){
+if(!isset($_SESSION['email'])){
     header("location: ./index.php");
 }
+
+require_once('inc/config.php');
+
+$cusEmail=$_SESSION['email'];
+$selectq="SELECT * FROM customers WHERE email='$cusEmail'";
+$selectcon=mysqli_query($connection,$selectq);
+$result=mysqli_fetch_assoc($selectcon);
+
 
 if(isset($_POST['submit'])){
     require_once('inc/config.php');
@@ -12,19 +22,14 @@ if(isset($_POST['submit'])){
     $lname=$_POST['Lname'];
     $age=$_POST['age'];
     $mobile=$_POST['mobileno'];
-    $email=$_POST['email'];
-    $password=$_POST['password'];
 
-    $userq="INSERT INTO users VALUES ('$email','$password',2,0)";
-    $usercon=mysqli_query($connection,$userq);
-
-    $cusq="INSERT INTO customers (firstname, lastname, age, email, contact) VALUES ('$fname','$lname',$age,'$email','$mobile')";
+    $cusq="UPDATE customers SET firstname='$fname', lastname='$lname', age='$age', contact='$mobile' WHERE email='$_SESSION[email]' ";
     $cuscon=mysqli_query($connection,$cusq);
     
     //echo $cusq;
-    if($cuscon&&$usercon){
+    if($cuscon){
         echo "<script>alert('Registered Successfully');</script>";
-        header("location: ./customer.php");
+        header("location: ./editCustomer.php");
     }else{
         echo "<script>alert('Something Wrong');</script>";
     }
@@ -36,54 +41,36 @@ if(isset($_POST['submit'])){
 
 <div>
     <img src="Images/customer-reg.png" class="pic">
-    <h1>Create A Customer Account</h1>
+    <h1>Edit Your Account</h1>
 
 </div>
 
 <div class="box">
-    <form method="post" action="cusreg.php">
+    <form method="post" action="editCustomer.php">
         <div class="bg" style="margin-left: 0px">
             <table class="tableAlign">
                 <tr>
                     <td>First Name</td>
-                    <td><input type="text" name="Fname" ></td>
+                    <td><input type="text" name="Fname" value="<?php echo $result['firstname']; ?>" ></td>
 
                 </tr>
                 <tr>
                     <td>Last Name</td>
-                    <td><input type="text" name="Lname" ></td>
+                    <td><input type="text" name="Lname" value="<?php echo $result['lastname']; ?>"></td>
 
                 </tr>
                 <tr>
                     <td>Age</td>
-                    <td><input type="text" name="age" ></td>
+                    <td><input type="text" name="age" value="<?php echo $result['age']; ?>"></td>
                 </tr>
                 
                 <tr>
                     <td>Mobile No</td>
-                    <td><input type="text" name="mobileno"></td>
+                    <td><input type="text" name="mobileno" value="<?php echo $result['contact']; ?>"></td>
 
                 </tr>
                 <tr>
-                    <td>Email</td>
-                    <td><input type="email" name="email"></td>
-
-                </tr>
-                <tr>
-                    <td>Password</td>
-                    <td><input type="password" name="password" id="password"></td>
-
-                </tr>
-                <tr>
-                    <td>Confirm Password</td>
-                    <td><input type="password" name="re-password" id="re-password" onkeyup="checkPassword()" ></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td style="color: red" id="passlabel">Password not matched</td>
-                </tr>
-                <tr>
-                    <td><input type="submit" value="Register Now" name="submit" ></td>
+                    <td><input type="submit" value="Edit" name="submit" ></td>
 
                 </tr>
 

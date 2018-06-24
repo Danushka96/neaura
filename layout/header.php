@@ -44,13 +44,29 @@
     </li>
     <li><a href="#">About Us</a></li>
     <li><a href="#">Contact Us</a></li>
-    <li><a href="#">Login</a>
-        <ul>
-            <li><a href="admin.php">Admin Login</a>
+    <?php 
+        if(!isset($_SESSION['email'])){
+            echo "
+            <li><a href='#'>Login</a>
+                <ul>
+                    <li><a href='admin.php'>Admin Login</a>
 
+                    </li>
+                    <li><a href='customer.php'>My Login</a></li>
+                </ul>
             </li>
-            <li><a href="customer.php">My Login</a></li>
-        </ul>
-    </li>
+            ";
+        }else{
+            echo "
+            <li><a href='#''>My Profile</a>
+                <ul>
+                    <li><a href='editCustomer.php?id=".$_SESSION['email']."'>Edit Details</a></li>
+                    <li><a href='./logout.php''>Logout</a></li>
+                </ul>
+            </li>
+            ";
+        }
+    ?>
+    
 
 </ul>
