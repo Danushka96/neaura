@@ -84,22 +84,24 @@ session_start();
 <div id="appointmentdiv">
 <h2 align="center">Make an Appointment here!!</h2>
 <form>
-<legend id="f1">Join with us!!</legend>
-<input type="image" id="f2" src="images/KelleyOrthodontics-RequestAppointmentButton.png" width="150px" height="50px" name="qap" value="Quick Appointment"/>
-<br>
-<input type="image" id="f3" src="images/new_button_login.png" width="150px" height="50px" name="log"/>
-<br>
-<label for="account" id="f4">Not a member? Create a free account and get exclusive discounts and many more!!</label>
-<br>
-<input type="image" id="f5" src="images/CreateAccount2.png" width="200px" height="100px" name="sign" id="account"/>
+<?php 
+	if(!isset($_SESSION['email'])){
 
+echo "
+<legend id='f1'>Join with us!!</legend>
+<input type='image' id='f2' src='images/KelleyOrthodontics-RequestAppointmentButton.png' width='150px' height='50px' name='qap' value='Quick Appointment'/>
+<br>
+<input type='image' id='f3' src='images/new_button_login.png' width='150px' height='50px' name='log'/>
+<br>
+<label for='account' id='f4'>Not a member? Create a free account and get exclusive discounts and many more!!</label>
+<br>
+<input type='image' id='f5' src='images/CreateAccount2.png' width='200px' height='100px' name='sign' id='account'/>";
+} ?>
 
 </form>
 </div>
 <!--Footer-->
 
- 
-  
     <div id="d11a">
     <h1 id="footerlogo" style="float:left; font-family:myfont; color:#060; text-shadow:2px 2px 2px #FFFFFF; padding:0px;"> Ne'Aura</h1>
 		<img style="float:left; left:15px; top:20px; position:relative;" src="images/leaf-mould.png" width="30px" height="30px"/>

@@ -1,12 +1,18 @@
+<?php
+session_start();
+
+?>
+
 <!doctype html>
 <html>
 <head>
 <meta charset="utf-8">
-<title>Ne'Aura Shampoo</title>
+<title>Outlets</title>
 <link rel="shortcut icon" href="images/leaf-mould.png">
 <link rel="stylesheet" type="text/css" href="css/head.css">
 <link rel="stylesheet" type="text/css" href="css/footerdesign.css">
-<link rel="stylesheet" type="text/css" href="css/Productavailabilitycheck1.css">
+<link rel="stylesheet" type="text/css" href="css/animationndimages.css">
+<link rel="stylesheet" type="text/css" href="css/animationimages_outlets.css">
 
 
 </head>
@@ -23,66 +29,69 @@
 
 <ul class="main-navigation">
 
-  <li><a href="#">Home</a></li>
-  <li><a href="#">Products</a>
-    <ul>
-     <li><a href="#">Skin Care</a></li>
-      <li><a href="#">Hair Care</a></li>
-      <li><a href="#">Body Care</a></li>
-      <li><a href="#">Outlets</a></li>
-      </ul></li>
-      <li><a href="#">Salons</a>
-      <ul>
-      <li><a href="#">Services</a></li>
-      <li><a href="#">Branches</a></li>
-      </ul>
-      </li>
-      <li><a href="#">Login</a>
-      <ul>
-      <li><a href="#">Admin Login</a>
-      
-      </li>
-      <li><a href="#">My Login</a></li>
-      </ul>
-      </li>
-      <li><a href="#">About Us</a></li>
-      <li><a href="#">Contact Us</a></li>
-      
-      </ul>
-    
-    <div id="pro1"><h3 id="title">Ne'Aura Shampoo</h3>
-    <img class="products" src="images/products/New folder/hair/godapara-shampoo.jpg" width="300px" height="300px" alt="Facewash"/>
-    
-    </div>
-    <div id="bran">
-    <div id="brans1"><h3>Ne'Aura - Borella</h3></div>
-    <div class="brans"><h3>Ne'Aura - Moratuwa</h3></div>
-    <div class="brans"><h3>Ne'Aura - Kelaniya</h3></div>
-    </div>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-<!--Footer-->
+    <li><a href="index.php">Home</a></li>
+    <li><a href="#">Products</a>
+        <ul>
+            <li><a href="#">Skin Care</a></li>
+            <li><a href="#">Hair Care</a></li>
+            <li><a href="#">Body Care</a></li>
+            <li><a href="outlets.php">Outlets</a></li>
+        </ul></li>
+    <li><a href="#">Salons</a>
+        <ul>
+            <li><a href="#">Services</a></li>
+            <li><a href="branches.php">Branches</a></li>
+        </ul>
+    </li>
+    <li><a href="#">About Us</a></li>
+    <li><a href="#">Contact Us</a></li>
+    <?php 
+        if(!isset($_SESSION['email'])){
+            echo "
+            <li><a href='#'>Login</a>
+                <ul>
+                    <li><a href='admin.php'>Admin Login</a>
 
- 
+                    </li>
+                    <li><a href='customer.php'>My Login</a></li>
+                </ul>
+            </li>
+            ";
+        }else{
+            echo "
+            <li><a href='#''>My Profile</a>
+                <ul>
+                    <li><a href='editCustomer.php?id=".$_SESSION['email']."'>Edit Details</a></li>
+                    <li><a href='./logout.php''>Logout</a></li>
+                </ul>
+            </li>
+            ";
+        }
+    ?>
   
+</div>
+     
+<div id="branchdiv">
+<h2 align="center" style="position:relative; top:20px;">Outlet and Salon Chain</h2>
+<ul>
+<li><a href="#">Ne'Aura Beauty Outlet and Salon-Borella</a></li>
+<li><a href="#">Ne'Aura Beauty Outlet and Salon Moratuwa</a></li>
+<li><a href="#">Ne'Aura Beauty Outlet and Salon Kelaniya</a></li>
+</ul>
+</div>
+<div id="appointmentdiv">
+<h2 align="center" style="position:relative; top:20px;" f>Check Product Availability</h2>
+<form>
+<label for="out">Select the product category here!</label>
+<br>
+<select id="out">
+<option>Face Care</option>
+<option>Hair Care</option>
+<option>Body Care</option>
+</select>
+
+</form>
+</div>
     <div id="d11a">
     <h1 id="footerlogo" style="float:left; font-family:myfont; color:#060; text-shadow:2px 2px 2px #FFFFFF; padding:0px;"> Ne'Aura</h1>
 		<img style="float:left; left:15px; top:20px; position:relative;" src="images/leaf-mould.png" width="30px" height="30px"/>

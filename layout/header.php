@@ -31,10 +31,10 @@
     <li><a href="index.php">Home</a></li>
     <li><a href="#">Products</a>
         <ul>
-            <li><a href="#">Skin Care</a></li>
-            <li><a href="#">Hair Care</a></li>
-            <li><a href="#">Body Care</a></li>
-            <li><a href="#">Outlets</a></li>
+            <li><a href="skincare.php">Skin Care</a></li>
+            <li><a href="haircare.php">Hair Care</a></li>
+            <li><a href="bodycare.php">Body Care</a></li>
+            <li><a href="outlets.php">Outlets</a></li>
         </ul></li>
     <li><a href="#">Salons</a>
         <ul>
