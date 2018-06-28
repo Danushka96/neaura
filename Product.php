@@ -1,8 +1,37 @@
+<?php
+session_start();
+require_once('inc/config.php');
+
+if(isset($_GET['product'])){
+	$product=$_GET['product'];
+	$selectq="SELECT * FROM items WHERE id='$product' LIMIT 1";
+	//echo $selectq;
+	$selectcon=mysqli_query($connection,$selectq);
+	$result=mysqli_fetch_assoc($selectcon);
+
+	$borellaq="SELECT quantity FROM branchitems WHERE itemid='$product' AND branchid='1'";
+	$borellacon=mysqli_query($connection,$borellaq);
+	$borellares=mysqli_fetch_assoc($borellacon);
+
+	$moratuwaq="SELECT quantity FROM branchitems WHERE itemid='$product' AND branchid='2'";
+	$moratuwacon=mysqli_query($connection,$moratuwaq);
+	$moratuwares=mysqli_fetch_assoc($moratuwacon);
+
+	$kelaniyaq="SELECT quantity FROM branchitems WHERE itemid='$product' AND branchid='3'";
+	$kelaniyacon=mysqli_query($connection,$kelaniyaq);
+	$kelaniyares=mysqli_fetch_assoc($kelaniyacon);
+
+}else{
+	header('location: index.php');
+}
+
+?>
+
 <!doctype html>
-<html>
 <head>
+<html>
 <meta charset="utf-8">
-<title>Carrot Face Wash</title>
+<title><?php echo $result['name']; ?></title>
 <link rel="shortcut icon" href="images/leaf-mould.png">
 <link rel="stylesheet" type="text/css" href="css/head.css">
 <link rel="stylesheet" type="text/css" href="css/footerdesign.css">
@@ -15,9 +44,9 @@
 <div id="divhead1">
 <h1 id="h11">Ne'Aura</h1>
 <img style="float:left; margin-left:5px; margin-top:8px;" src="images/leaf-mould.png" width="50px" height="50px"/>
-<img class="snlogo" src="images/facebook-logo_318-49940.jpg" width="20px" height="20px" alt="Facebookconnect"/>
-<img class="snlogo" src="images/69366.png" width="20px" height="20px" alt="Instagramconnect"/>
-<img class="snlogo" src="images/images (1).png" width="20px" height="20px" alt="Twitterconnect"/>
+<a href="https://facebook.com"><img class="snlogo" src="images/facebook-logo_318-49940.jpg" width="20px" height="20px" alt="Facebookconnect"/></a>
+<a href="https://intergram.com"><img class="snlogo" src="images/69366.png" width="20px" height="20px" alt="Instagramconnect"/></a>
+<a href="https://twitter.com"><img class="snlogo" src="images/images (1).png" width="20px" height="20px" alt="Twitterconnect"/></a>
 <h6 id="h61">Beauty Product Outlets and Salons</h6>
 </div>
 
@@ -50,39 +79,26 @@
       
       </ul>
     
-    <div id="pro1"><h3 id="title">Ne'Aura Carrot Face wash</h3>
+    <div id="pro1"><h3 id="title"><?php echo $result['name']; ?></h3>
     <img class="products" src="images/products/New folder/face/large_DSCF2475.JPG" width="300px" height="300px" alt="Facewash"/>
     
     </div>
     <div id="bran">
-    <div id="brans1"><h3>Ne'Aura - Borella</h3></div>
-    <div class="brans"><h3>Ne'Aura - Moratuwa</h3></div>
-    <div class="brans"><h3>Ne'Aura - Kelaniya</h3></div>
+    <div id="brans1">
+    	<h3>Ne'Aura - Borella</h3>
+    	<h2 style="margin-left: 25px"><?php if($borellares['quantity']>0){echo "Available";}else{ echo "Not Available";} ?></h2>
     </div>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    <div class="brans">
+    	<h3>Ne'Aura - Moratuwa</h3>
+    	<h2 style="margin-left: 25px"><?php if($moratuwares['quantity']>0){echo "Available";}else{ echo "Not Available";} ?></h2>
+    </div>
+    <div class="brans">
+    	<h3>Ne'Aura - Kelaniya</h3>
+    	<h2 style="margin-left: 25px"><?php if($kelaniyares['quantity']>0){echo "Available";}else{ echo "Not Available";} ?></h2>
+    </div>
+    </div>
+        
 <!--Footer-->
-
- 
-  
     <div id="d11a">
     <h1 id="footerlogo" style="float:left; font-family:myfont; color:#060; text-shadow:2px 2px 2px #FFFFFF; padding:0px;"> Ne'Aura</h1>
 		<img style="float:left; left:15px; top:20px; position:relative;" src="images/leaf-mould.png" width="30px" height="30px"/>
@@ -122,9 +138,9 @@
 	</div>
 	<div id="d11e">
 		<p>Follow Us</p>
-		<p><img src="images/images (7).jpg" width="30px" height="30px"/>
-		<img src="images/images (5).jpg" width="30px" height="30px"/>
-		<img src="images/images (6).jpg"width="30px" height="30px"/></p>
+		<p><a href="https://facebook.com"><img src="images/images (7).jpg" width="30px" height="30px"/></a>
+		<a href="https://intergram.com"><img src="images/images (5).jpg" width="30px" height="30px"/></a>
+		<a href="https://twitter.com"><img src="images/images (6).jpg"width="30px" height="30px"/></p></a>
 	</div>
 	
 	
@@ -144,11 +160,6 @@
 		</span>
 		<a href="#" class="a5">Privacy Statement Terms and Conditions</a>
 	</div>
-
-
-
-
-
 
 </body>
 </html>
