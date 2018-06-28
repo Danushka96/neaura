@@ -2,6 +2,26 @@
 
 session_start();
 require_once('layout/header.php');
+require_once('inc/config.php');
+
+$selectq="SELECT * FROM comments ORDER BY (time) DESC LIMIT 3";
+$selectcon=mysqli_query($connection,$selectq);
+
+if(isset($_POST['submit'])){
+	$id=$_SESSION['customerid'];
+	//echo "id".$id;
+	$comment=$_POST['comment'];
+
+	$cquery="INSERT INTO comments (customerid, comment) VALUES ($id,'$comment')";
+	//echo $cquery;
+	$commentcon=mysqli_query($connection,$cquery);
+	if($commentcon){
+		header("location: ./index.php");
+	}else{
+		echo "<script>alert('Something went wrong!')</script>";
+	}
+}
+
 
 ?>
 
@@ -32,18 +52,30 @@ require_once('layout/header.php');
 <img class="pics" src="images/products/New folder/body/body-wash-aloe-vera.jpg" width="25%" height="200px" alt="4"/>
 <img class="pics" src="images/products/New folder/body/moisturising-lotion.jpg" width="25%" height="200px" alt="4">
 </div>
- <div id="commnt1">
- <img src="images/view1.png" width="50px" height="50px" alt="pen" style="margin-left:600px; margin-top:30px; box-shadow:2px 2px #FFF;"/>
- <h2 align="center" class="sub">User Comments</h2>
- <p>I was just browsing your website & it has a good presentation of all the products you offer. I'm a regular user of Ne'Aura products as well & I think they are better than any of the international products offered in the  market. Proud to you’ll. Keep it up”------Dilini - Sri Lanka------- </p>
-       
+
+<?php
+
+	while($result=mysqli_fetch_assoc($selectcon)){
+ 		$comment="<div id='commnt1'>
+ 		<img src='images/view1.png' width='50px' height='50px' alt='pen' style='margin-left:600px; margin-top:30px; box-shadow:2px 2px #FFF;'/>
+ 		<h2 align='center' class='sub'>User Comments</h2>
+ 		<p> ".$result['comment']."</p></div>";
+ 		echo $comment;
+     }
+ ?>  
  </div>
- <div id="commnt2">
- <img src="images/view1.png" width="50px" height="50px" alt="pen" style="margin-left:600px; margin-top:30px; box-shadow:2px 2px #FFF;"/>
- <h2 align="center" class="sub">User Comments</h2>
- <p>Hi..I really liked your facewash------Thilini - Sri Lanka------- </p>
- </div>
- 
+
+<div>
+
+<form action="" method="POST">
+	<input type="text" name="comment" placeholder="Enter your comment here">
+	<input type="submit" value="submit" name="submit">
+
+</form>
+
+</div>
+
+
 <!--Footer-->
 
  

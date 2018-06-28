@@ -14,7 +14,6 @@ if(isset($_POST['submit'])){
     $selectq=mysqli_query($connection,$query);
     if(mysqli_num_rows($selectq)>0){
         $result=mysqli_fetch_assoc($selectq);
-        $_SESSION['customerid']=$result['id'];
         $_SESSION['email']=$result['email'];
         $_SESSION['type']=$result['type'];
 
@@ -23,6 +22,7 @@ if(isset($_POST['submit'])){
         if(mysqli_num_rows($cusqur)>0){
         	$cusresult=mysqli_fetch_assoc($cusqur);
         	$_SESSION['name']=$cusresult['firstname'];
+            $_SESSION['customerid']=$cusresult['id'];
         }
         header("location: ./index.php");
     }else{
