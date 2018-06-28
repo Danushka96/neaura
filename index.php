@@ -30,7 +30,7 @@ if(isset($_POST['submit'])){
   <img src="images/Post1-Ayurveda-101.png" alt="Slide 4" />
   <img src="images/beauty.jpg" alt="Slide 3" />
 
-  <img src="images/home page middle slide 03.jpg" alt="Slide 2" />
+  <img src="images/home_page_middle_slide_03.jpg" alt="Slide 2" />
 
   <img src="images/tmb_69055_9432.jpg" alt="Slide 1" />
   
