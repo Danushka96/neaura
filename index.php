@@ -75,13 +75,39 @@ if(isset($_POST['submit'])){
 
 </div>
 
+<!-- Comment box start -->
+
+<div class="slider-container">
+    <div class="mySlides fade">
+		<p class="comment-box">
+			Comment 01 - Some notes here.......... 
+		</p>
+    </div>
+    
+    <div class="mySlides fade">
+		<p class="comment-box">
+        	Comment 02 - Some thing else here.......... 
+		</p>
+    </div>
+
+    <div class="mySlides fade">
+		<p class="comment-box">
+        	Comment 03 - Other things here............
+		</p>
+    </div>
+    
+    <br>
+
+    <div style="text-align:center">
+      	<span class="dot"></span> 
+      	<span class="dot"></span> 
+      	<span class="dot"></span> 
+    </div>
+  </div>
+
+  <!-- Comment box start -->
 
 <!--Footer-->
-
- 
-
-    
-    
     
     <div id="d11a">
     <h1 id="footerlogo" style="float:left; font-family:myfont; color:#060; text-shadow:2px 2px 2px #FFFFFF; padding:0px;"> Ne'Aura</h1>
@@ -144,6 +170,32 @@ if(isset($_POST['submit'])){
 		</span>
 		<a href="#" class="a5">Privacy Statement Terms and Conditions</a>
 	</div>
+
+<!-- Comment box JS start -->
+
+<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    for (i = 0; i < slides.length; i++) {
+       slides[i].style.display = "none";  
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}    
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+    setTimeout(showSlides, 4000); // Change image every 2 seconds
+}
+</script>
+
+<!-- Comment box JS start -->
 
 </body>
 </html>
