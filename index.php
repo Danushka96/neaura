@@ -53,18 +53,25 @@ if(isset($_POST['submit'])){
 <img class="pics" src="images/products/New folder/body/moisturising-lotion.jpg" width="25%" height="200px" alt="4">
 </div>
 
+
+<div class="slider-container">
 <?php
 
 	while($result=mysqli_fetch_assoc($selectcon)){
- 		$comment="<div id='commnt1'>
+ 		$comment="<div id='commnt1' class='mySlides fade'>
  		<img src='images/view1.png' width='50px' height='50px' alt='pen' style='margin-left:600px; margin-top:30px; box-shadow:2px 2px #FFF;'/>
  		<h2 align='center' class='sub'>User Comments</h2>
  		<p> ".$result['comment']."</p></div>";
  		echo $comment;
      }
- ?>  
+ ?>
+     <div style="text-align:center">
+      	<span class="dot"></span> 
+      	<span class="dot"></span> 
+      	<span class="dot"></span> 
+    </div>
  </div>
-
+</div>
 <div>
 
 <form action="" method="POST">
@@ -75,37 +82,6 @@ if(isset($_POST['submit'])){
 
 </div>
 
-<!-- Comment box start -->
-
-<div class="slider-container">
-    <div class="mySlides fade">
-		<p class="comment-box">
-			Comment 01 - Some notes here.......... 
-		</p>
-    </div>
-    
-    <div class="mySlides fade">
-		<p class="comment-box">
-        	Comment 02 - Some thing else here.......... 
-		</p>
-    </div>
-
-    <div class="mySlides fade">
-		<p class="comment-box">
-        	Comment 03 - Other things here............
-		</p>
-    </div>
-    
-    <br>
-
-    <div style="text-align:center">
-      	<span class="dot"></span> 
-      	<span class="dot"></span> 
-      	<span class="dot"></span> 
-    </div>
-  </div>
-
-  <!-- Comment box start -->
 
 <!--Footer-->
     
