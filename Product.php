@@ -80,7 +80,7 @@ if(isset($_GET['product'])){
       </ul>
     
     <div id="pro1"><h3 id="title"><?php echo $result['name']; ?></h3>
-    <img class="products" src="images/products/New folder/face/large_DSCF2475.JPG" width="300px" height="300px" alt="Facewash"/>
+    <img class="products" src="<?php echo 'images/products/New folder/'.$result['image']; ?>" width="300px" height="300px" alt="Facewash"/>
     
     </div>
     <div id="bran">

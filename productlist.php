@@ -3,7 +3,9 @@ session_start();
 require_once('inc/config.php');
 require_once('layout/header.php');
 
-$query="SELECT * FROM items";
+$producttype=$_GET['type'];
+
+$query="SELECT * FROM items WHERE type='$producttype'";
 $querycon=mysqli_query($connection,$query);
 
 $item='';

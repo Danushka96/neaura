@@ -42,9 +42,10 @@ if(isset($_POST['additem'])){
 	$name=$_POST['itemname'];
 	$price=$_POST['itemprice'];
 	$quantity=$_POST['itemquantity'];
+	$type=$_POST['type'];
 	$image=$_POST['itemimage'];
 
-	$insqq="INSERT INTO items VALUES('$itemid','$name','$price','$image')";
+	$insqq="INSERT INTO items VALUES('$itemid','$name','$price','$type','$image')";
 	$inscon=mysqli_query($connection,$insqq);
 
 	$insqitem="INSERT INTO branchitems VALUES ('$itemid','$id','$quantity')";
@@ -237,6 +238,19 @@ if(isset($_GET['delservice'])){
 				<div class="modal-property">Name<input type="text" name="itemname"></div>
 				<div class="modal-property">Price<input type="text" name="itemprice"></div>
 				<div class="modal-property">Quantity<input type="text" name="itemquantity"></div>
+				<div class="modal-property">Type
+					<select name="type" style="	float: right;
+												margin: 0px;
+												padding-left: 10px;
+												width: 300px;
+												height: 35px;
+												line-height: 35px;
+												font-size: 20px;">
+						<option value="1">Face Care</option>
+						<option value="2">Hair Care</option>
+						<option value="3">Body Care</option>
+					</select>
+				</div>
 				<div class="modal-property">Image<input type="text" name="itemimage"></div>
 			</div>
 			<div class="modal-footer">

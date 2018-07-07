@@ -20,9 +20,10 @@ if(isset($_POST['itemedit'])){
 	$name=$_POST['itemname'];
 	$price=$_POST['itemprice'];
 	$quantity=$_POST['itemquantity'];
+	$type=$_POST['type'];
 	$image=$_POST['itemimage'];
 
-	$insqq="UPDATE items SET name='$name', price='$price', image='$image' WHERE id='$itemid'";
+	$insqq="UPDATE items SET name='$name', price='$price', type='$type', image='$image' WHERE id='$itemid'";
 	$inscon=mysqli_query($connection,$insqq);
 
 	$insqitem="UPDATE branchitems SET quantity='$quantity' WHERE itemid='$itemid' AND branchid='$id'";
@@ -53,6 +54,19 @@ if(isset($_POST['itemedit'])){
 				<div class="modal-property">Name<input type="text" name="itemname" value="<?php echo $selectresult['name'] ?>"></div>
 				<div class="modal-property">Price<input type="text" name="itemprice" value="<?php echo $selectresult['price'] ?>"></div>
 				<div class="modal-property">Quantity<input type="text" name="itemquantity" value="<?php echo $quantity['quantity'] ?>"></div>
+				<div class="modal-property">Type
+					<select name="type" style="	float: right;
+												margin: 0px;
+												padding-left: 10px;
+												width: 300px;
+												height: 35px;
+												line-height: 35px;
+												font-size: 20px;">
+						<option value="1" <?php if($selectresult['type']==1){echo "selected";} ?>>Face Care</option>
+						<option value="2" <?php if($selectresult['type']==2){echo "selected";} ?>>Hair Care</option>
+						<option value="3" <?php if($selectresult['type']==3){echo "selected";} ?>>Body Care</option>
+					</select>
+				</div>
 				<div class="modal-property">Image<input type="text" name="itemimage" value="<?php echo $selectresult['image'] ?>"></div>
 			</div>
 			<div class="modal-footer">

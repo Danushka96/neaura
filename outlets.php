@@ -84,10 +84,10 @@ session_start();
 <form>
 <label for="out">Select the product category here!</label>
 <br>
-<select id="out">
-<option>Face Care</option>
-<option>Hair Care</option>
-<option>Body Care</option>
+<select id="out" onchange="redirectlink(this.value)">
+<option value="1">Face Care</option>
+<option value="2">Hair Care</option>
+<option value="3">Body Care</option>
 </select>
 
 </form>
@@ -155,7 +155,22 @@ session_start();
 	</div>
 
 
+<script>
+	
+function redirectlink(type){
+	if(type=='1'){
+		window.open('productlist.php?type=1');
 
+	}else if(type=='2'){
+		window.open('productlist.php?type=2');
+	}else if(type=='3'){
+		window.open('productlist.php?type=3');
+	}else{
+		console.log("hi");
+	}
+}
+
+</script>
 
 
 

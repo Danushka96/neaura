@@ -83,22 +83,18 @@ session_start();
 </div>
 <div id="appointmentdiv">
 <h2 align="center">Make an Appointment here!!</h2>
-<form>
-<?php 
-	if(!isset($_SESSION['email'])){
 
-echo "
+
 <legend id='f1'>Join with us!!</legend>
-<input type='image' id='f2' src='images/KelleyOrthodontics-RequestAppointmentButton.png' width='150px' height='50px' name='qap' value='Quick Appointment'/>
+<a href="appointment.php"><img src='images/KelleyOrthodontics-RequestAppointmentButton.png' width='150px' height='50px' name='qap' value='Quick Appointment'/>
 <br>
-<input type='image' id='f3' src='images/new_button_login.png' width='150px' height='50px' name='log'/>
+<a href="customer.php"><img src='images/new_button_login.png' width='150px' height='50px' name='log'/></a>
 <br>
 <label for='account' id='f4'>Not a member? Create a free account and get exclusive discounts and many more!!</label>
 <br>
-<input type='image' id='f5' src='images/CreateAccount2.png' width='200px' height='100px' name='sign' id='account'/>";
-} ?>
+<a href="cusreg.php"><img src='images/CreateAccount2.png' width='200px' height='100px' name='sign' id='account'/></a>
 
-</form>
+
 </div>
 <!--Footer-->
 
