@@ -23,7 +23,7 @@ session_start();
 <img style="float:left; margin-left:5px; margin-top:8px;" src="images/leaf-mould.png" width="50px" height="50px"/>
 <img class="snlogo" src="images/facebook-logo_318-49940.jpg" width="20px" height="20px" alt="Facebookconnect"/>
 <img class="snlogo" src="images/69366.png" width="20px" height="20px" alt="Instagramconnect"/>
-<img class="snlogo" src="images/images (1).png" width="20px" height="20px" alt="Twitterconnect"/>
+<img class="snlogo" src="images/images_(1).png" width="20px" height="20px" alt="Twitterconnect"/>
 <h6 id="h61">Beauty Product Outlets and Salons</h6>
 </div>
 
@@ -32,9 +32,9 @@ session_start();
     <li><a href="index.php">Home</a></li>
     <li><a href="#">Products</a>
         <ul>
-            <li><a href="#">Skin Care</a></li>
-            <li><a href="#">Hair Care</a></li>
-            <li><a href="#">Body Care</a></li>
+            <li><a href="skincare.php">Skin Care</a></li>
+            <li><a href="haircare.php">Hair Care</a></li>
+            <li><a href="bodycare.php">Body Care</a></li>
             <li><a href="outlets.php">Outlets</a></li>
         </ul></li>
     <li><a href="#">Salons</a>
@@ -68,6 +68,15 @@ session_start();
             ";
         }
     ?>
+      
+</ul>
+      <div class="fling-minislide">
+  <img src="images/naturesecrets_bodybutter-e1430977193716.jpg" alt="Slide 4" />
+  <img src="images/bottom slide 02.jpg" alt="Slide 3" />
+
+  <img src="images/home_page_bottom_slide_06.jpg"alt="Slide 2" />
+
+  <img src="images/home_page_bottom_slide_07.jpg"alt="Slide 1" />
   
 </div>
      

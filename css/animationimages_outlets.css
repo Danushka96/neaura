@@ -83,4 +83,35 @@ float:left;
 	 padding-top:30px;
 	 
 	}
+	 form{
+		 font-family:myfont2;
+		 font-weight:800;
+		 padding-top:100px;
+		 text-align:center;
+	 }
 	 
+	 select{
+		 width:300px;
+		 height:50px;
+		 padding-top:0px;
+		 padding-left:100px;
+		 font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
+		 letter-spacing:1em;
+		 border-spacing:5px;
+		 border-color:#FFF;
+		 font-weight:800;
+		 background: #8DC63F; /* For browsers that do not support gradients */
+background: -webkit-linear-gradient(45deg,#8DC63F, #D9E796,#A0BF38); /* For Safari 5.1 to 6.0 */
+background: -o-linear-gradient(45deg,#8DC63F, #D9E796,#A0BF38); /* For Opera 11.1 to 12.0 */
+background: -moz-linear-gradient(45deg,#8DC63F, #D9E796,#A0BF38); /* For Firefox 3.6 to 15 */
+background: linear-gradient(45deg,#8DC63F,#D9E796,#A0BF38); /* Standard syntax */
+
+}
+option:hover{
+ 
+ color:#030;
+ background-color:#FFF;   
+}
+
+		 
+		 
