@@ -24,7 +24,7 @@
 <img style="float:left; margin-left:5px; margin-top:8px;" src="images/leaf-mould.png" width="50px" height="50px"/>
 <a href="https://facebook.com"><img class="snlogo" src="images/facebook-logo_318-49940.jpg" width="20px" height="20px" alt="Facebookconnect"/></a>
 <a href="https://intergram.com"><img class="snlogo" src="images/69366.png" width="20px" height="20px" alt="Instagramconnect"/></a>
-<a href="https://twitter.com"><img class="snlogo" src="images/images (1).png" width="20px" height="20px" alt="Twitterconnect"/></a>
+<a href="https://twitter.com"><img class="snlogo" src="images/images_(1).png" width="20px" height="20px" alt="Twitterconnect"/></a>
 <h6 id="h61">Beauty Product Outlets and Salons</h6>
 </div>
 
